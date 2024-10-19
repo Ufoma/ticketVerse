@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Search</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f0f0f0;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="date"], input[type="time"] {
+            background-color: #444;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #555;
+            border: none;
+            color: #f0f0f0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        /* Event List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            background-color: #333;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Follow/Unfollow Button Styling */
+        #follow-button, #unfollow-button {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        /* Followers Count */
+        #followers-count {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search Events</h1>
+
+    <!-- Search Events Form -->
+    <form id="search-form">
+        <input type="date" id="date" name="date" required>
+        <input type="time" id="time" name="time" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Event List -->
+    <ul id="event-list">
+        <!-- Event items will be dynamically added here -->
+    </ul>
+
+    <!-- Follow/Unfollow Buttons -->
+    <div class="button-container">
+        <button id="follow-button" data-event-id="event-id">Follow</button>
+        <button id="unfollow-button" data-event-id="event-id">Unfollow</button>
+    </div>
+
+    <!-- Followers Count -->
+    <p id="followers-count">Followers: <span id="followers-count-value">0</span></p>
+
+    <script>
+        // Search Events
+        const searchForm = document.getElementById('search-form');
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const response = await fetch(`/search_events?date=${date}&time=${time}`);
+            const events = await response.json();
+
+            // Clear the event list
+            const eventList = document.getElementById('event-list');
+            eventList.innerHTML = '';
+
+            // Render event list
+            events.forEach(event => {
+                const li = document.createElement('li');
+                li.textContent = `Event: ${event.name}, Time: ${event.time}`;
+                eventList.appendChild(li);
+            });
+        });
+
+        // Follow Event
+        const followButton = document.getElementById('follow-button');
+        followButton.addEventListener('click', async () => {
+            const eventId = followButton.dataset.eventId;
+            const userId = 'user-id'; // Replace with actual user ID
+            const response = await fetch(`/follow_event/${eventId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user_id: userId }),
+            });
+            const result = await response.json();
+            console.log(result);
+            // Update followers count
+            document.getElementById('followers-count-value').textContent = result.followers;
+        });
+
+        // Unfollow Event
+        const unfollowButton = document.getElementById('unfollow-button');
+        unfollowButton.addEventListener('click', async () => {
+            const eventId = unfollowButton.dataset.eventId;
+            const userId = 'user-id'; // Replace with actual user ID
+            const response = await fetch(`/unfollow_event/${eventId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user_id: userId }),
+            });
+            const result = await response.json();
+            console.log(result);
+            // Update followers count
+            document.getElementById('followers-count-value').textContent = result.followers;
+        });
+    </script>
+
+</body>
+</html>
