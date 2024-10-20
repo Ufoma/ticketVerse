@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Verse | Find. Buy. Enjoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+    <div>
+        <!-- Header section -->
+        <header>
+            <div class="header">
+                <div class="logo">
+                    <a href="#">TicketVerse</a>
+                </div>
+                <div>
+                    <nav class="headernav">
+                        <ul class="navul">
+                            <li><a href="{{url_for ('calender')}}">Calender</a></li>
+                            <li>About Us</li>
+                            <li><a href="{{ url_for ('help')}}">Help</a></li>
+                            <li> <button>Sign in</button></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <!-- Hero section -->
+        <div class="hero-w">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="c-white">Unlock the stage to </span><br> <span class="c-grey">uforgettable
+                        sounds.</span>
+                </div>
+                <div>
+                    <label for="search"><input type="search" name="search" id="search"
+                            placeholder="Search for event"></label>
+                    <div>
+                        <p>Get tickets to gigs, parties and festivals <br> for the best priice in the market</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Hero section -->
+
+        <!-- Event Category -->
+        <div class="category-w">
+            <div>
+                <ul>
+                    <li><img src="" alt="C"> Conserts</li>
+                    <li><img src="" alt="E"> Exhibitions</li>
+                    <li><img src="" alt="F"> Festivals</li>
+                    <li><img src="" alt="P"> Parties</li>
+                    <li><img src="" alt="M"> Movies</li>
+                    <li><img src="" alt="C"> Culcary</li>
+                    <li><img src="" alt="S"> Sports </li>
+                    <li><img src="" alt="K"> Kids</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Event Category -->
+
+        <div>
+            <!-- Popular in Nigeria -->
+            <div class="popular-w">
+                <div class="popular-l">
+                    <h1> <span class="bold">Popular in</span> Nigeria</h1>
+                    <nav>
+                        <ul class="navul underline" style="padding: 0;">
+                            <li style="padding: 0;">All</li>
+                            <li>Today</li>
+                            <li>Tomorrow</li>
+                            <li>This Week</li>
+                            <li>Next Week</li>
+                            <li>This month</li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- let this have slides -->
+                <div class="box-flex">
+                    <!-- create multi box with this  -->
+                    <div class="p-box">
+                        <!-- <div class="avater"></div> -->
+                        <div class="box-text">
+                            <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                            <div class="box-l">
+                                <p>Serenade Square - 17/08/2024, 8pm</p>
+                                <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- delete here and replace with the finished version of the above -->
+                    <div class="p-box">
+                        <!-- <div class="avater"></div> -->
+                        <div class="box-text">
+                            <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                            <div class="box-l">
+                                <p>Serenade Square - 17/08/2024, 8pm</p>
+                                <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-box">
+                        <!-- <div class="avater"></div> -->
+                        <div class="box-text">
+                            <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                            <div class="box-l">
+                                <p>Serenade Square - 17/08/2024, 8pm</p>
+                                <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-box">
+                        <!-- <div class="avater"></div> -->
+                        <div class="box-text">
+                            <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                            <div class="box-l">
+                                <p>Serenade Square - 17/08/2024, 8pm</p>
+                                <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- this week in theaters -->
+                <div class="theatrs">
+                    <h1>This week in Theatres</h1>
+                    <div class="box-flex">
+                        <!-- create multi box with this  -->
+                        <div class="p-box">
+                            <!-- <div class="avater"></div> -->
+                            <div class="box-text">
+                                <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                                <div class="box-l">
+                                    <p>Serenade Square - 17/08/2024, 8pm</p>
+                                    <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-box">
+                            <!-- <div class="avater"></div> -->
+                            <div class="box-text">
+                                <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                                <div class="box-l">
+                                    <p>Serenade Square - 17/08/2024, 8pm</p>
+                                    <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-box">
+                            <!-- <div class="avater"></div> -->
+                            <div class="box-text">
+                                <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                                <div class="box-l">
+                                    <p>Serenade Square - 17/08/2024, 8pm</p>
+                                    <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-box">
+                            <!-- <div class="avater"></div> -->
+                            <div class="box-text">
+                                <h3 class="box-white">Echoes of Euphoria (DE)</h3>
+                                <div class="box-l">
+                                    <p>Serenade Square - 17/08/2024, 8pm</p>
+                                    <button><a href="{{ url_for ('buy') }}">Buy tickets</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- venues to follow -->
+                <div class="venues">
+                    <h1>Venues to follow</h1>
+                    <div class="box-flex ">
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                        <div class="venue-box">
+                            <img src="" alt="profile">
+                            <div>
+                                <h2>Dog House</h2>
+                                <p>2m follow</p>
+                            </div>
+                            <button>Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-l">
+                    <h1>Stay in touch with us</h1>
+                    <label for="subscribe"><input type="email" name="subscribe" id="subscribe"
+                            placeholder="Your email address"></label>
+                    <!-- social media icon here -->
+                </div>
+
+                <div class="footer-flex">
+                    <!-- about -->
+                    <div class="test">
+                        <h1>About us</h1>
+                        <ul>
+                            <li>About</li>
+                            <li>Press</li>
+                            <li>Media kit</li>
+                            <li>Careers</li>
+                            <li>News</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+
+                    <!-- follow us -->
+                    <div class="test">
+                        <h1>Follow us</h1>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Linkedin</li>
+                            <li>Instagram</li>
+                            <li>Snapchat</li>
+                        </ul>
+                    </div>
+
+                    <!-- for organizers -->
+                    <div class="test">
+                        <h1>For organizers</h1>
+                        <ul>
+                            <li>Partnership</li>
+                            <li>Collaboration</li>
+                            <li>List your event</li>
+                            <li>For Businesses</li>
+                            <li>Business support</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="hr">
+                <hr>
+                <hr>
+            </div>
+            <div class="footer-logo">TicketVerse</div>
+
+        </footer>
+    </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help | Find. Buy. Enjoy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+
+    <body>
+        <div>
+            <!-- Ticket verse header -->
+            <header>
+                <div class="header">
+                    <div class="logo">
+                        <a href="{{ url_for ('index') }}">TicketVerse</a>
+                    </div>
+                    <div>
+                        <nav class="headernav">
+                            <ul class="navul">
+                                <li><a href="{{ url_for ('calender') }}">Calender</a></li>
+                                <li>About Us</li>
+                                <li><a href="{{ url_for ('help') }}">Help</a></li>
+                                <li> <button>Sign in</button></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main class="w-help">
+                <div class="help-c">
+                    <label for="search">
+                        <input type="text" name="search" id="search" placeholder="Search for event">
+                    </label>
+                    <h1>Hello there! How can we help you?</h1>
+                </div>
+                <div class="test-box">
+                    <div class="help-box">
+                        <img src="" alt="icon here">
+                        <p>Trouble with tickets</p>
+                    </div>
+                    <div class="help-box">
+                        <img src="" alt="icon here">
+                        <p>Trouble with venue</p>
+                    </div>
+                    <div class="help-box">
+                        <img src="" alt="icon here">
+                        <p>Event cancellation</p>
+                    </div>
+                    <div class="help-box">
+                        <img src="" alt="icon here">
+                        <p>Others</p>
+
+                    </div>
+                </div>
+            </main>
+
+            <div>
+                <footer>
+                    <div class="footer-container">
+                        <div class="footer-l">
+                            <h1>Stay in touch with us</h1>
+                            <label for="subscribe"><input type="email" name="subscribe" id="subscribe"
+                                    placeholder="Your email address"></label>
+                            <!-- social media icon here -->
+                        </div>
+
+                        <div class="footer-flex">
+                            <!-- about -->
+                            <div class="test">
+                                <h1>About us</h1>
+                                <ul>
+                                    <li>About</li>
+                                    <li>Press</li>
+                                    <li>Media kit</li>
+                                    <li>Careers</li>
+                                    <li>News</li>
+                                    <li>Support</li>
+                                </ul>
+                            </div>
+
+                            <!-- follow us -->
+                            <div class="test">
+                                <h1>Follow us</h1>
+                                <ul>
+                                    <li>Facebook</li>
+                                    <li>Twitter</li>
+                                    <li>Linkedin</li>
+                                    <li>Instagram</li>
+                                    <li>Snapchat</li>
+                                </ul>
+                            </div>
+
+                            <!-- for organizers -->
+                            <div class="test">
+                                <h1>For organizers</h1>
+                                <ul>
+                                    <li>Partnership</li>
+                                    <li>Collaboration</li>
+                                    <li>List your event</li>
+                                    <li>For Businesses</li>
+                                    <li>Business support</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="hr">
+                        <hr>
+                        <hr>
+                    </div>
+                    <div class="footer-logo">TicketVerse</div>
+
+                </footer>
+            </div>
+
+        </div>
+    </body>
+</body>
+
+</html>
