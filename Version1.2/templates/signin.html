@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Find. Buy. Enjoy</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/signin.css')}}">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="login-form">
+        <form action="{{url_for('signin') }}" method="post">
+            <h1>Login</h1>
+            <div class="content">
+                <div class="input-field">
+                    <input type="email" id="email" placeholder="Email" autocomplete="nope">
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password" placeholder="Password" autocomplete="new-password">
+                </div>
+                <a href="#" class="link">Forgot Your Password?</a>
+            </div>
+            <div class="action">
+                <button type="button" onclick="location.href='{{ url_for('register') }}'"></button>>Register</button>
+                <button type="submit">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- <script src=" url_for('static', filname='script.js')"></script> -->
+
+</body>
+
+</html>

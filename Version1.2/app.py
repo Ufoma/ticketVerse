@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash
+from werkzeug.security import check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -12,6 +13,7 @@ app.config['SQLACHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize SQLALchemy and Migrate
 db = SQLAlchemy(app)
 Migrate = Migrate(app, db)
+
 
 # test
 
@@ -30,19 +32,34 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/login')
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
+    if request.method == 'POST':
+        username = request.form['email']
+        password = request.form['password']
+
+        # Query the database for the user
+        user = User.query.filter_by(username=username).first()
+
+        # Check hashed password
+        if user and check_password_hash(user.password, password):
+            # Password is correct, log the user in (this could be a session setup, etc.)
+            flash('Login successful!', 'success')
+            return redirect(url_for('index'))  # Redirect to home or dashboard
+        else:
+            flash('Invalid username or password!', 'danger')
+
     return render_template('signin.html')
 
 
 @app.route('/signup')
 def signup():
-    return render_template('signuup.html')
+    return render_template('signup.html')
 
 
-@app.route('/signout')
-def logout():
-    return render_template('signout.html')
+# @app.route('/signout')
+# def logout():
+#     return render_template('signout.html')
 
 
 @app.route('/about')
