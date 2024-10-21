@@ -1,2 +1,5 @@
-.gitgnore
-frontend
+**pycache**/
+_.py[cod]
+_$py.class
+__pycache__
+user.db

@@ -1,0 +1,19 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Find. Buy. Enjoy</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/dashboard.css')}}">
+    <!-- Link to your dashboard CSS -->
+</head>
+
+<body>
+    <h1>Welcome to your Dashboard!</h1>
+    <p>This is your personalized space.</p>
+    <a href="{{ url_for('signout') }}">Logout</a>
+</body>
+
+</html>
