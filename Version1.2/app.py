@@ -77,9 +77,9 @@ def buy():
     return render_template('/pages/buy.html')
 
 
-@app.route('/calender')
-def calender():
-    return render_template('/pages/calender.html')
+@app.route('/calendar')
+def calendar():
+    return render_template('/pages/calendar.html')
 
 
 if __name__ == '__main__':

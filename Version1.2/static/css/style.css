@@ -392,12 +392,12 @@ footer {
   justify-content: center;
 }
 
-.calender-w {
+.calendar-w {
   display: flex;
   min-height: 75vh;
 }
 
-.calender-l {
+.calendar-l {
   background-color: lightgray;
   width: 50%;
   padding: 10px;
@@ -405,27 +405,27 @@ footer {
   flex-direction: column;
 }
 
-.calender-l h1 {
+.calendar-l h1 {
   font-size: 1.4em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 600;
 }
 
-.calender-l th,
-.calender-l td {
+.calendar-l th,
+.calendar-l td {
   padding: 20px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1em;
   font-weight: 300;
 }
 
-.calender-l .amount {
+.calendar-l .amount {
   background-color: #333;
   border-radius: 20px;
   width: 100px;
 }
 
-.calender-r {
+.calendar-r {
   background-color: #333;
   width: 50%;
   padding: 20px;
@@ -435,7 +435,7 @@ footer {
   color: #f7f7f7;
 }
 
-.calender-r div {
+.calendar-r div {
   max-width: 80%;
   margin: auto;
 }
