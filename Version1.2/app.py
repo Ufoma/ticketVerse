@@ -1,7 +1,28 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 
 app = Flask(__name__)
+
+# Configure the db url
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SQLACHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize SQLALchemy and Migrate
+db = SQLAlchemy(app)
+Migrate = Migrate(app, db)
+
+# test
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
 
 
 @app.route('/')
